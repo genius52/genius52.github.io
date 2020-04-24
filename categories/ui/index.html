@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/genius52">
-  <title>genius52</title>
+  <title>Category: ui | genius52</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="只有码字才能维持得了生活">
 <meta property="og:type" content="website">
 <meta property="og:title" content="genius52">
-<meta property="og:url" content="https://github.com/genius52/index.html">
+<meta property="og:url" content="https://github.com/genius52/categories/ui/index.html">
 <meta property="og:site_name" content="genius52">
 <meta property="og:description" content="只有码字才能维持得了生活">
 <meta property="og:locale" content="en_US">
@@ -160,39 +160,35 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Guilite-quick-start" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/04/15/Guilite-quick-start/" class="archive-article-date">
+  	<time datetime="2020-04-15T12:37:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/15/Guilite-quick-start/">Guilite quick start</a>
+      <a class="archive-article-title" href="/2020/04/15/Guilite-quick-start/">Guilite quick start</a>
     </h1>
   
 
-        
-        <a href="/2020/04/15/Guilite-quick-start/" class="archive-article-date">
-  	<time datetime="2020-04-15T12:37:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>Guilite是平台无关的UI库,内置了一些基本的控件，控件以及图形的绘制都在内存上，和操作系统的窗口、控件没有对应关系，真正做到了跨平台。</p>
-<p>以windows为例，首先创建一个外壳窗口，可以用wtl,mfc等。之后划出一片窗口显示区域width * height分配内存，guilite所有的绘制都在这片区域进行，为了防止窗口闪烁，通常分配的是客户区上下文对应的缓存(memorydc.createcompatibleDc)，UI线程每隔几十毫秒刷新客户区(BitBlt)。<br>除了创建外壳窗口，ui部分可以完全由guilite搞定。</p>
-<h2 id="图层管理"><a href="#图层管理" class="headerlink" title="图层管理"></a>图层管理</h2><p>TODO</p>
-<h2 id="消息机制"><a href="#消息机制" class="headerlink" title="消息机制"></a>消息机制</h2><p>用户的操作事件，如鼠标点击、移动、拖动、键盘输入等，需要调用getmessage后，将事件传给guilite的根元素,如点击事件root_ui.on_touch(x,y,TOUCH_DOWN),由根元素判断点击的具体位置，调用控件的响应事件(如果有的话)。可以看到这里的事件传递，并不涉及窗口过程，因为每个父节点知道子节点的位置信息，通过递归可以将事件传给最后的子元素。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+        <div class="article-info info-on-right">
+          
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -205,39 +201,17 @@
 	</div>
 
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/15/Guilite-quick-start/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -259,11 +233,11 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
 		isTag: false,
-		isCategory: false,
+		isCategory: true,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
