@@ -5,13 +5,15 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="https://github.com/genius52">
   <title>genius52</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="只有码字才能维持得了生活">
+<meta property="og:type" content="website">
 <meta property="og:title" content="genius52">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://github.com/genius52/index.html">
 <meta property="og:site_name" content="genius52">
+<meta property="og:description" content="只有码字才能维持得了生活">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="genius52">
 <meta name="twitter:card" content="summary">
@@ -174,8 +176,8 @@
       
         <h2 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h2><p>Guilite是平台无关的UI库,内置了一些基本的控件，控件以及图形的绘制都在内存上，和操作系统的窗口、控件没有对应关系，真正做到了跨平台。</p>
 <p>以windows为例，首先创建一个外壳窗口，可以用wtl,mfc等。之后划出一片窗口显示区域width * height分配内存，guilite所有的绘制都在这片区域进行，为了防止窗口闪烁，通常分配的是客户区上下文对应的缓存(memorydc.createcompatibleDc)，UI线程每隔几十毫秒刷新客户区(BitBlt)。<br>除了创建外壳窗口，ui部分可以完全由guilite搞定。</p>
-<h2 id="图层管理"><a href="#图层管理" class="headerlink" title="图层管理"></a>图层管理</h2><p>to do</p>
-<h2 id="消息机制"><a href="#消息机制" class="headerlink" title="消息机制"></a>消息机制</h2><p>用户的操作事件，如鼠标点击、移动、拖动、键盘输入等，需要调用getmessage后，将事件传给guilite的根元素,如点击事件root_ui.on_touch(x,y,TOUCH_DOWN),由根元素判断点击的具体位置，调用控件的响应事件(如果有的话)。可以看到这里的事件传递，并不涉及窗口过程，因为每个父节点知道子节点的位置信息，所以通过递归，可以将事件传给最后的子元素。</p>
+<h2 id="图层管理"><a href="#图层管理" class="headerlink" title="图层管理"></a>图层管理</h2><p>TODO</p>
+<h2 id="消息机制"><a href="#消息机制" class="headerlink" title="消息机制"></a>消息机制</h2><p>用户的操作事件，如鼠标点击、移动、拖动、键盘输入等，需要调用getmessage后，将事件传给guilite的根元素,如点击事件root_ui.on_touch(x,y,TOUCH_DOWN),由根元素判断点击的具体位置，调用控件的响应事件(如果有的话)。可以看到这里的事件传递，并不涉及窗口过程，因为每个父节点知道子节点的位置信息，通过递归可以将事件传给最后的子元素。</p>
 
       
 
