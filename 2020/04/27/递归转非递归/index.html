@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/genius52">
-  <title>gui | genius52</title>
+  <title>递归转非递归 | genius52</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="只有码字才能维持得了生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="gui">
-<meta property="og:url" content="https://github.com/genius52/gui/index.html">
+  <meta name="description" content="递归转非递归之快速排序递归的思想递归是为解决一个大的问题，将问题反复拆分成相同逻辑的小问题，而反复调用自身。递归通常存在若干个结束条件，满足条件后不再执行。引用书本中的定义，递归思想就是：把问题分解成规模更小，但和原问题有着相同解法的问题。优点是代码清晰简短，容易阅读。 非递归非递归通常以循环作为作为手段，不断累积局部的解，达到最终的解 比较如果把问题看作顶端，把具体的计算看作底端。递归的过程是从">
+<meta property="og:type" content="article">
+<meta property="og:title" content="递归转非递归">
+<meta property="og:url" content="https://github.com/genius52/2020/04/27/%E9%80%92%E5%BD%92%E8%BD%AC%E9%9D%9E%E9%80%92%E5%BD%92/index.html">
 <meta property="og:site_name" content="genius52">
-<meta property="og:description" content="只有码字才能维持得了生活">
+<meta property="og:description" content="递归转非递归之快速排序递归的思想递归是为解决一个大的问题，将问题反复拆分成相同逻辑的小问题，而反复调用自身。递归通常存在若干个结束条件，满足条件后不再执行。引用书本中的定义，递归思想就是：把问题分解成规模更小，但和原问题有着相同解法的问题。优点是代码清晰简短，容易阅读。 非递归非递归通常以循环作为作为手段，不断累积局部的解，达到最终的解 比较如果把问题看作顶端，把具体的计算看作底端。递归的过程是从">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-24T01:31:57.000Z">
-<meta property="article:modified_time" content="2020-04-24T01:33:42.148Z">
+<meta property="article:published_time" content="2020-04-27T04:01:01.000Z">
+<meta property="article:modified_time" content="2020-04-27T04:01:08.571Z">
 <meta property="article:author" content="genius52">
 <meta name="twitter:card" content="summary">
   
@@ -160,27 +160,45 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-递归转非递归" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      gui
+      递归转非递归
     </h1>
   
 
         
-        <a href="/gui/index.html" class="archive-article-date">
-  	<time datetime="2020-04-24T01:31:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-24</time>
+        <a href="/2020/04/27/%E9%80%92%E5%BD%92%E8%BD%AC%E9%9D%9E%E9%80%92%E5%BD%92/" class="archive-article-date">
+  	<time datetime="2020-04-27T04:01:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="递归转非递归之快速排序"><a href="#递归转非递归之快速排序" class="headerlink" title="递归转非递归之快速排序"></a>递归转非递归之快速排序</h1><h2 id="递归的思想"><a href="#递归的思想" class="headerlink" title="递归的思想"></a>递归的思想</h2><p>递归是为解决一个大的问题，将问题反复拆分成相同逻辑的小问题，而反复调用自身。递归通常存在若干个结束条件，满足条件后不再执行。<br>引用书本中的定义，递归思想就是：把问题分解成规模更小，但和原问题有着相同解法的问题。<br>优点是代码清晰简短，容易阅读。</p>
+<h2 id="非递归"><a href="#非递归" class="headerlink" title="非递归"></a>非递归</h2><p>非递归通常以循环作为作为手段，不断累积局部的解，达到最终的解</p>
+<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><p>如果把问题看作顶端，把具体的计算看作底端。<br>递归的过程是从顶到底(top to bottom)，非递归的过程是从底到顶（bottom to top)。<br>递归函数每调用一次自己，会创建一个栈帧(stack frame),在当前函数返回前，占用的内存不会释放。如果递归次数很多，往往会造成栈溢出。<br>非递归通常使用数据结构stack保存下一次要执行的参数，</p>
+<h2 id="改造非递归例子"><a href="#改造非递归例子" class="headerlink" title="改造非递归例子"></a>改造非递归例子</h2><p>网上太多fibonacci的例子，这里举一个更典型的快速排序。</p>
+<h3 id="递归快速排序"><a href="#递归快速排序" class="headerlink" title="递归快速排序"></a>递归快速排序</h3><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Recursive_qsort</span><span class="params">(data []<span class="keyword">int</span>,low <span class="keyword">int</span>,high <span class="keyword">int</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> low &gt; high&#123;</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	l := low</span><br><span class="line">	h := high</span><br><span class="line">	tag := data[l]</span><br><span class="line">	<span class="keyword">for</span> l &lt; h &#123;</span><br><span class="line">		<span class="keyword">for</span> l &lt; h &amp;&amp; data[h] &gt; tag &#123;</span><br><span class="line">			h--</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> l &lt; h &#123;</span><br><span class="line">			data[l] = data[h]</span><br><span class="line">			l++</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> l &lt; h &amp;&amp; data[l] &lt; tag&#123;</span><br><span class="line">			l++</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> l &lt; h&#123;</span><br><span class="line">			data[h] = data[l]</span><br><span class="line">			h--</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	data[l] = tag</span><br><span class="line">	Recursive_qsort(data,low,l - <span class="number">1</span>)</span><br><span class="line">	Recursive_qsort(data,l + <span class="number">1</span>,high)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="改造成非递归"><a href="#改造成非递归" class="headerlink" title="改造成非递归"></a>改造成非递归</h3><p>定义一个stack容器保存数组的下标(low)和上标(high),由于golang中没有stack容器，我们使用一个list来保存上下标<br><font color=red></p>
+<ol>
+<li>将初始的上下标保存到栈<br> b.low = 0<br>  b.high = length - 1<br>  s.PushBack(b)  </font>
+<font color=blue></li>
+<li>在原来循环的外层，增加循环条件，判断当前栈是否为空。for s.Len() &gt; 0  </font>
+<font color=green></li>
+<li>在原来递归调用的地方，改成将新的上下标入栈<br>Recursive_qsort(data,low,l - 1)  ==&gt;  s.PushBack(b)</font> 
+
+
+</li>
+</ol>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Boundary <span class="keyword">struct</span> &#123;</span><br><span class="line">	low <span class="keyword">int</span></span><br><span class="line">	high <span class="keyword">int</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Norecursive_qsort</span><span class="params">(data []<span class="keyword">int</span>)</span></span>&#123;</span><br><span class="line">	length := <span class="built_in">len</span>(data)</span><br><span class="line">	<span class="keyword">if</span> length == <span class="number">0</span>&#123;</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> s list.List</span><br><span class="line">	<span class="keyword">var</span> b Boundary</span><br><span class="line">	b.low = <span class="number">0</span></span><br><span class="line">	b.high = length - <span class="number">1</span></span><br><span class="line">	s.PushBack(b)</span><br><span class="line">	<span class="keyword">for</span> s.Len() &gt; <span class="number">0</span>&#123;</span><br><span class="line">		top := s.Back()</span><br><span class="line">		s.Remove(top)</span><br><span class="line">		l := top.Value.(Boundary).low</span><br><span class="line">		h := top.Value.(Boundary).high</span><br><span class="line">		tag := data[l]</span><br><span class="line">		<span class="keyword">for</span> l &lt; h&#123;</span><br><span class="line">			<span class="keyword">for</span> l &lt; h &amp;&amp; data[h] &gt; tag &#123;</span><br><span class="line">				h--</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> l &lt; h&#123;</span><br><span class="line">				data[l] = data[h]</span><br><span class="line">				l++</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span> l &lt; h &amp;&amp; data[l] &lt; tag&#123;</span><br><span class="line">				l++</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> l &lt; h&#123;</span><br><span class="line">				data[h] = data[l]</span><br><span class="line">				h--</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		data[l] = tag</span><br><span class="line">		<span class="keyword">if</span> l - <span class="number">1</span> &gt; top.Value.(Boundary).low&#123;</span><br><span class="line">			<span class="keyword">var</span> b Boundary</span><br><span class="line">			b.low = top.Value.(Boundary).low</span><br><span class="line">			b.high = l - <span class="number">1</span></span><br><span class="line">			s.PushBack(b)</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> h + <span class="number">1</span> &lt; top.Value.(Boundary).high&#123;</span><br><span class="line">			<span class="keyword">var</span> b Boundary</span><br><span class="line">			b.low = h + <span class="number">1</span></span><br><span class="line">			b.high = top.Value.(Boundary).high</span><br><span class="line">			s.PushBack(b)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -259,7 +277,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/genius52/gui/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/genius52/2020/04/27/%E9%80%92%E5%BD%92%E8%BD%AC%E9%9D%9E%E9%80%92%E5%BD%92/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -271,6 +289,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/15/Guilite-quick-start/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Guilite quick start</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -321,7 +349,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
